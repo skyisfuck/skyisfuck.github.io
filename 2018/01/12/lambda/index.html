@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="big head,306647809@qq.com"><title>lambda · big head</title><meta name="description" content="Python 是一门简洁的语言，lambda 表达式则充分体现了 Python 这一特点。lambda 表达可以被看做是一种匿名函数。它可以让你快速定义一个极度简单的单行函数。譬如这样一个实现三个数相加的函数：
+
+def sum(a, b, c):
+return a + b + c
+print su"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">big head</a></h3><div class="description"><p>随便写写</p></div></div></div><ul class="social-links"><li><a href="http://weibo.com/inoroorg"><i class="fa fa-weibo"></i></a></li><li><a href="http://github.com/skyisfuck"><i class="fa fa-github"></i></a></li></ul><!--.footer--><!--  a(target="_blank", href="/")--><!--    span Theme by --><!--  a(href="skyisfuck.github.io")  skyisfuck--><!--  span &--><!--  a(href="https://github.com/Ben02/hexo-theme-Anatole")  Ben--><!--  .by_farbox--><!--    a(href="skyisfuck", target="_blank") Proudly published with Hexo&#65281;--><script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><center><div class="powered-by"><i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div></center></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li><li><a href="/games">小游戏</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>lambda</a></h3></div><div class="post-content"><h1 id="Python-是一门简洁的语言，lambda-表达式则充分体现了-Python-这一特点。"><a href="#Python-是一门简洁的语言，lambda-表达式则充分体现了-Python-这一特点。" class="headerlink" title="Python 是一门简洁的语言，lambda 表达式则充分体现了 Python 这一特点。"></a>Python 是一门简洁的语言，lambda 表达式则充分体现了 Python 这一特点。</h1><p><strong>lambda</strong> 表达可以被看做是一种匿名函数。它可以让你快速定义一个极度简单的单行函数。譬如这样一个实现三个数相加的函数：</p>
+<ul>
+<li>def sum(a, b, c):</li>
+<li>return a + b + c</li>
+<li>print sum(1, 2, 3)</li>
+<li>print sum(4, 5, 6)</li>
+</ul>
+<p>输出：<br>6<br>15</p>
+<p><strong>如果使用 lambda 表达式来实现：</strong></p>
+<p>sum = lambda a, b, c: a + b + c</p>
+<p>print sum(1, 2, 3)<br>print sum(4, 5, 6)</p>
+<p>输出：<br>6<br>15</p>
+<p>两种方法的结果是相同的。</p>
+<p>lambda 表达式的语法格式：</p>
+<p>lambda 参数列表: 表达式</p>
+<p>定义 lambda 表达式时，参数列表周围没有括号，返回值前没有 return 关键字，也没有函数名称。</p>
+<p>它的写法比 def 更加简洁。但是，它的主体只能是一个表达式，不可以是代码块，甚至不能是命令（print 不能用在 lambda 表达式中）。所以 lambda 表达式能表达的逻辑很有限。</p>
+<p>lambda 表达式创建了一个函数对象，可以把这个对象赋值给一个变量进行调用，就像上面的例子中一样。</p>
+<p>来看一个复杂一点的例子，把 lambda 表达式用在 def 函数定义中：</p>
+<p>def fn(x):<br>return lambda y: x + y</p>
+<p>a = fn(2)<br>print a(3)</p>
+<p>输出：<br>5</p>
+<p>这里，fn 函数的返回值是一个 lambda 表达式，也就等于是一个函数对象。当以参数2来调用 fn 时，得到的结果就是：<br>lambda y: 2 + y</p>
+<p>a = fn(2) 就相当于：<br>a = lambda y: 2 + y</p>
+<p>所以 a(3) 的结果就是5。</p>
+<p>lambda 表达式其实只是一种编码风格，这种写法更加 pythonic。这并不意味着你一定要使用它。事实上，任何可以使用 lambda 表达式的地方，都可以通过普通的 def 函数定义来替代。在一些需要重复使用同一函数的地方，def 可以避免重复定义函数。况且 def 函数更加通用，某些情况可以带来更好地代码可读性。</p>
+<p>而对于像 filter、sort 这种需要内嵌函数的方法，lambda 表达式就会显得比较合适。这个我以后会再单独介绍。</p>
+<p>当然对于初学者来说，了解 lambda 表达式还有一个重要作用就是，看懂别人写的代码。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-01-12</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,skyisfuck.github.io/2018/01/12/lambda/,big head,lambda,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2018/01/12/firewall/" title="firewall">上一篇</a></li></ul></div><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js?v=undefined"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  notify:false || false, 
+  verify:false|| false, 
+  app_id:'uILvmzOCbHtRJCgWCCEoWNPx-gzGzoHsz',
+  app_key:'r7WD847PyX9xg8ldEEHnr4o8',
+  placeholder:'Today is good day!!!',
+  path: window.location.pathname,
+  avatar:'monsterid'
+})</script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/love.js"></script></body></html>
