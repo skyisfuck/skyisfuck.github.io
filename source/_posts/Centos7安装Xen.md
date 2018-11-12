@@ -65,7 +65,7 @@ vi ifcfg-br0
 	PREFIX=24
 	GATEWAY=192.168.5.2
 	DNS1=192.168.5.2
-	STP=1
+	STP=yes
 
 systemctl restart network
 
