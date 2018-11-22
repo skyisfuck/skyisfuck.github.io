@@ -16,3 +16,6 @@ comments: false
 10. [自动化运维工具Ansible详细部署 ](http://blog.51cto.com/sofar/1579894#comment)
 11. [ansible专题](https://www.jianshu.com/u/ace85431b4bb)
 12. [ansible中文指南](http://www.ansible.com.cn/)
+13. [OpenStack Queens版搭建详解](https://blog.csdn.net/networken/article/details/80682437?tdsourcetag=s_pcqq_aiomsg/)
+14. [openstack pike 单机centos7 一键安装 shell](https://www.cnblogs.com/elvi/p/7811528.html/)
+15. [陈沙克日志](http://www.chenshake.com/?tdsourcetag=s_pcqq_aiomsg/)
